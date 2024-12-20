@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://blykvkmcywvhp"]
+
+[ext_resource type="Script" path="res://snake.cs" id="1_teb86"]
+[ext_resource type="Texture2D" uid="uid://dyoo8q32gpuek" path="res://icon.svg" id="2_ijweu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4f5lk"]
+size = Vector2(129, 130.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_txemd"]
+radius = 136.25
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_teb86")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ijweu")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(87, 0)
+scale = Vector2(0.359998, 0.760001)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_4f5lk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4f5lk")
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+position = Vector2(71, 3)
+rotation = 1.58939
+shape = SubResource("CircleShape2D_txemd")
+target_position = Vector2(2.67545, -340.109)

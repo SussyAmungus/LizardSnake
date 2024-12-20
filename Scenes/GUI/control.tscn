@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cxd03aeylraty"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_vertical_guides_ = [-142.0]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 478.0
+offset_top = 36.0
+offset_right = 518.0
+offset_bottom = 76.0
+scale = Vector2(1.41551, 1.30953)
+text = "Time: 0"
+fit_content = true
+autowrap_mode = 0
+tab_size = 24
+context_menu_enabled = true
+custom_effects = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1004.0
+offset_top = 6.0
+offset_right = 1100.0
+offset_bottom = 46.0
+scale = Vector2(1.48, 1.48)
+text = "HighScore: 0"
+fit_content = true
+autowrap_mode = 0
