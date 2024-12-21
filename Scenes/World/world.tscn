@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://daogxx0xqisgx"]
+[gd_scene load_steps=6 format=3 uid="uid://daogxx0xqisgx"]
 
 [ext_resource type="PackedScene" uid="uid://dqgqn6aslgy75" path="res://Scenes/Lizard/Lizard.tscn" id="1_35h1l"]
 [ext_resource type="Script" path="res://Scenes/World/World.cs" id="1_coo7b"]
 [ext_resource type="PackedScene" uid="uid://blykvkmcywvhp" path="res://Scenes/Snake/Snake.tscn" id="2_hea4u"]
 [ext_resource type="PackedScene" uid="uid://cxd03aeylraty" path="res://Scenes/GUI/control.tscn" id="4_p8i6h"]
+[ext_resource type="Texture2D" uid="uid://2rhru4hqm2pl" path="res://Scenes/World/long-grass-laying-down-close-up-mage-long-grass-mostly-laying-down-long-grass-laying-down-148662321.webp" id="5_xh7dy"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_coo7b")
@@ -11,7 +12,7 @@ script = ExtResource("1_coo7b")
 [node name="Lizard2D" parent="." instance=ExtResource("1_35h1l")]
 position = Vector2(1366, 370)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("2_hea4u")]
+[node name="Snake2D" parent="." instance=ExtResource("2_hea4u")]
 position = Vector2(251, 477)
 scale = Vector2(0.993902, 0.990536)
 
@@ -23,3 +24,9 @@ offset_left = -1.0
 offset_top = -1.0
 offset_right = -1.0
 offset_bottom = -1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(866, 475)
+scale = Vector2(1.91125, 1.50388)
+texture = ExtResource("5_xh7dy")

@@ -31,6 +31,9 @@ public partial class snake : StaticBody2D
 	private Vector2 lastHeadPos;
 	public float lastHeadRot;
 
+	[Signal]
+	public delegate void RestartGameEventHandler();
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -39,6 +42,8 @@ public partial class snake : StaticBody2D
 		shapecast = this.GetNode<ShapeCast2D>("ShapeCast2D");
 
 		GetNode<Area2D>("Area2D").Connect("area_entered", new Callable(this, "react"));
+
+		
 
 		addSegment();
 		addSegment();
@@ -166,8 +171,8 @@ public partial class snake : StaticBody2D
 		}
 		if(area.GetParent() is Lizard){
 
-			GetTree().ReloadCurrentScene();
-			this.Position = new Vector2(0,0);
+			EmitSignal(SignalName.RestartGame);	
+			//..//this.Position = new Vector2(0,0);
 		}
     }
 
