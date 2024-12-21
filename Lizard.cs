@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.ComponentModel;
 
 
 
@@ -7,8 +8,12 @@ using System;
 public partial class Lizard : StaticBody2D
 {
 
-	private int dropTail = 1;
+	
+	//private bool candrop = true;
+
 	private bool candrop = true;
+
+	private LizardTail currSpawned = null;
 
 	public double time = 0; 
 
@@ -25,7 +30,7 @@ public partial class Lizard : StaticBody2D
     {
         if(@event is InputEventKey keyEvent){
 
-			if(candrop == true)
+			
 			if(keyEvent.Pressed && keyEvent.Keycode == Key.Space){
 				dropTailer();
 
@@ -38,7 +43,7 @@ public partial class Lizard : StaticBody2D
     public override void _Process(double delta)
 	{
 
-		resetDrop(delta);
+		
 		float amount = 5;
 		if(Input.IsKeyPressed(Key.W)){
 			this.Position += new Vector2(0,-amount);
@@ -54,29 +59,40 @@ public partial class Lizard : StaticBody2D
 		}
 
 		time = time + delta;
+
+		if(IsInstanceValid(currSpawned) == false){
+
+		candrop = true;
+
+		}
+		
+
+
 	}
 	public void dropTailer(){
 
 		if(candrop == true){
-
 			candrop = false;
+			
 		LizardTail tt = tail.Instantiate() as LizardTail;
 		GetTree().Root.GetNode("World").AddChild(tt);
 		tt.Position = this.Position + new Vector2(0,10);
 		GD.Print("DroppedTail");
 
+		currSpawned = tt;
+
 		}
 	}
 
-	public void resetDrop(double delta){
+	// public void resetDrop(double delta){
 
-	time = time + delta;
+	// time = time + delta;
 
-	if(time > dropTail){
+	// if(time > ){
 
-		candrop = true;
-		time = 0;
-	}
+	// 	candrop = true;
+	// 	time = 0;
+	// }
 
-	}
+	// }
 }
