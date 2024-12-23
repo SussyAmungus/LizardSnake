@@ -60,13 +60,15 @@ public partial class Lizard : StaticBody2D
 
 		time = time + delta;
 
-		if(IsInstanceValid(currSpawned) == false){
 
-		candrop = true;
+		resetDrop(delta);
 
-		}
+		//if(IsInstanceValid(currSpawned) == false){
+
+		//candrop = true;
+
+	//	}
 		
-
 
 	}
 	public void dropTailer(){
@@ -84,15 +86,15 @@ public partial class Lizard : StaticBody2D
 		}
 	}
 
-	// public void resetDrop(double delta){
+	 public void resetDrop(double delta){
 
-	// time = time + delta;
+	 time = time + delta;
 
-	// if(time > ){
+	 if(time > 3){
 
-	// 	candrop = true;
-	// 	time = 0;
-	// }
+		candrop = true;
+	 	time = 0;
+	 }
 
-	// }
+	}
 }

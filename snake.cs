@@ -98,7 +98,7 @@ public partial class snake : StaticBody2D
 		findTarget(delta);
 
 	
-		speedS = (float)(speedS + delta * 0.1);
+		//speedS = (float)(speedS + delta * 0.1);
 	
 		
 	}
@@ -167,7 +167,7 @@ public partial class snake : StaticBody2D
         if(area.GetParent() is LizardTail){
 
 			area.GetParent<LizardTail>().Destroy();
-			speedS = (float)(speedS - 0.01);
+			speedS = (float)(speedS + 0.5);
 		}
 		if(area.GetParent() is Lizard){
 
@@ -175,6 +175,8 @@ public partial class snake : StaticBody2D
 			//..//this.Position = new Vector2(0,0);
 		}
     }
+
+
 
 
 }
